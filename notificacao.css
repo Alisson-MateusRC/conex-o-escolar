@@ -1,0 +1,420 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   PÁGINA
+================================= */
+
+.pagina-notificacao {
+    width: 100%;
+    min-height: 100vh;
+    padding: 25px 5%;
+}
+
+
+/* ==============================
+   CABEÇALHO
+================================= */
+
+.cabecalho-notificacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 45px;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #62bd78;
+}
+
+.logo-simbolo {
+    width: 40px;
+    height: 40px;
+
+    background-color: #b8f2c5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 22px;
+}
+
+.logo strong {
+    display: block;
+    font-size: 9px;
+}
+
+.logo span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 7px;
+}
+
+
+/* Nome da escola */
+
+.nome-escola {
+    width: 230px;
+
+    background-color: #70c984;
+
+    color: #222;
+
+    text-align: center;
+
+    padding: 12px;
+
+    font-size: 13px;
+}
+
+
+/* Logo da escola */
+
+.logo-escola {
+    width: 90px;
+
+    background-color: #70c984;
+
+    color: #222;
+
+    text-align: center;
+
+    padding: 10px 5px;
+
+    font-size: 12px;
+}
+
+
+/* ==============================
+   PESQUISA
+================================= */
+
+.pesquisa {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.pesquisa h1 {
+    color: #4caf68;
+
+    font-size: 24px;
+
+    font-weight: normal;
+
+    margin-bottom: 8px;
+}
+
+.pesquisa p {
+    color: #666;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Campo de pesquisa */
+
+.campo-pesquisa {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.campo-pesquisa input {
+    width: 350px;
+
+    border: 1px solid #b8cfc0;
+
+    background-color: #e8faed;
+
+    padding: 12px 15px;
+
+    outline: none;
+
+    font-size: 13px;
+
+    border-radius: 4px;
+}
+
+.campo-pesquisa input:focus {
+    border-color: #67c77b;
+}
+
+.campo-pesquisa button {
+    border: none;
+
+    background-color: #67c77b;
+
+    color: #ffffff;
+
+    padding: 12px 20px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    border-radius: 4px;
+}
+
+.campo-pesquisa button:hover {
+    background-color: #4caf68;
+}
+
+
+/* ==============================
+   RESULTADO
+================================= */
+
+.resultado {
+    display: none;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    background-color: #e8faed;
+
+    border: 1px solid #b8cfc0;
+
+    padding: 25px;
+
+    border-radius: 6px;
+}
+
+
+/* ==============================
+   DADOS DO ALUNO
+================================= */
+
+.aluno {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #dce8df;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    border-radius: 5px;
+}
+
+.foto-aluno {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    background-color: #b8f2c5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+.dados-aluno h2 {
+    color: #333;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+.dados-aluno p {
+    color: #666;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+
+/* ==============================
+   NOTIFICAÇÃO
+================================= */
+
+.notificacao-box {
+    background-color: #ffffff;
+
+    border: 1px solid #dce8df;
+
+    padding: 20px;
+
+    border-radius: 5px;
+}
+
+.notificacao-box h2 {
+    color: #4caf68;
+
+    font-size: 17px;
+
+    font-weight: normal;
+
+    margin-bottom: 15px;
+}
+
+.notificacao-box textarea {
+    width: 100%;
+
+    height: 100px;
+
+    resize: vertical;
+
+    border: 1px solid #b8cfc0;
+
+    background-color: #f5fff7;
+
+    padding: 12px;
+
+    outline: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+}
+
+.notificacao-box textarea:focus {
+    border-color: #67c77b;
+}
+
+.notificacao-box button {
+    border: none;
+
+    background-color: #67c77b;
+
+    color: #ffffff;
+
+    padding: 10px 18px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    border-radius: 4px;
+}
+
+.notificacao-box button:hover {
+    background-color: #4caf68;
+}
+
+
+/* Mensagem */
+
+.mensagem-status {
+    color: #4caf68;
+
+    font-size: 12px;
+
+    margin-top: 10px;
+}
+
+
+/* ==============================
+   BOTÃO VOLTAR
+================================= */
+
+.acoes {
+    max-width: 850px;
+
+    margin: 20px auto 0;
+}
+
+.btn-voltar {
+    border: none;
+
+    background-color: #4421ff;
+
+    color: #ffffff;
+
+    padding: 9px 18px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    border-radius: 4px;
+}
+
+.btn-voltar:hover {
+    opacity: 0.8;
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+================================= */
+
+@media (max-width: 700px) {
+
+    .pagina-notificacao {
+        padding: 20px;
+    }
+
+    .cabecalho-notificacao {
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .nome-escola {
+        width: 100%;
+
+        order: 3;
+    }
+
+    .campo-pesquisa {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .campo-pesquisa input {
+        width: 100%;
+
+        max-width: 350px;
+    }
+
+    .resultado {
+        width: 100%;
+    }
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Conexão Escolar - Notificações</title>
+
+    <link rel="stylesheet" href="notificacao.css">
+</head>
+
+<body>
+
+    <main class="pagina-notificacao">
+
+        <!-- CABEÇALHO -->
+
+        <header class="cabecalho-notificacao">
+
+            <div class="logo">
+
+                <div class="logo-simbolo">
+                    ✦
+                </div>
+
+                <div>
+                    <strong>CONEXÃO ESCOLAR</strong>
+
+                    <span>
+                        Conectando Famílias
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="nome-escola">
+                Nome da Escola
+            </div>
+
+
+            <div class="logo-escola">
+                Logo da<br>
+                escola
+            </div>
+
+        </header>
+
+
+        <!-- ÁREA DE PESQUISA -->
+
+        <section class="pesquisa">
+
+            <h1>
+                Pesquisar aluno
+            </h1>
+
+            <p>
+                Consulte informações e envie notificações aos responsáveis.
+            </p>
+
+
+            <div class="campo-pesquisa">
+
+                <input
+                    type="text"
+                    id="nomeAluno"
+                    placeholder="Digite o nome do aluno"
+                >
+
+                <button
+                    type="button"
+                    onclick="pesquisarAluno()"
+                >
+                    Pesquisar
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTADO DA PESQUISA -->
+
+        <section
+            class="resultado"
+            id="resultado"
+        >
+
+            <div class="aluno">
+
+                <div class="foto-aluno">
+                    👨‍🎓
+                </div>
+
+                <div class="dados-aluno">
+
+                    <h2>
+                        João da Silva
+                    </h2>
+
+                    <p>
+                        Turma: 5º Ano
+                    </p>
+
+                    <p>
+                        Situação: Regular
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTIFICAÇÃO -->
+
+            <div class="notificacao-box">
+
+                <h2>
+                    Enviar notificação
+                </h2>
+
+                <textarea
+                    id="mensagemAluno"
+                    placeholder="Digite uma mensagem para o responsável..."
+                ></textarea>
+
+                <button
+                    type="button"
+                    onclick="enviarNotificacao()"
+                >
+                    Enviar notificação
+                </button>
+
+                <p
+                    id="mensagemStatus"
+                    class="mensagem-status"
+                ></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOTÃO VOLTAR -->
+
+        <div class="acoes">
+
+            <button
+                type="button"
+                class="btn-voltar"
+                onclick="window.location.href='index.html'"
+            >
+                Voltar
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        function pesquisarAluno() {
+
+            const nome = document.getElementById("nomeAluno").value;
+
+            const resultado = document.getElementById("resultado");
+
+            if (nome === "") {
+
+                resultado.style.display = "none";
+
+                alert("Digite o nome do aluno.");
+
+                return;
+            }
+
+            resultado.style.display = "block";
+
+        }
+
+
+        function enviarNotificacao() {
+
+            const mensagem =
+                document.getElementById("mensagemAluno").value;
+
+            const status =
+                document.getElementById("mensagemStatus");
+
+
+            if (mensagem === "") {
+
+                status.textContent =
+                    "Digite uma mensagem antes de enviar.";
+
+                return;
+            }
+
+
+            status.textContent =
+                "Notificação enviada com sucesso!";
+
+            document.getElementById("mensagemAluno").value = "";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

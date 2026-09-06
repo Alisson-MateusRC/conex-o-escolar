@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Conexão Escolar - Notas</title>
+
+    <link rel="stylesheet" href="notas.css">
+</head>
+
+<body>
+
+    <main class="pagina-notas">
+
+        <!-- MENU / CABEÇALHO -->
+
+        <header class="cabecalho-notas">
+
+            <div class="logo">
+
+                <div class="logo-simbolo">
+                    ✦
+                </div>
+
+                <div>
+                    <strong>CONEXÃO ESCOLAR</strong>
+
+                    <span>
+                        Conectando Famílias
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="nome-escola">
+                Nome da Escola
+            </div>
+
+
+            <div class="logo-escola">
+                Logo da<br>
+                escola
+            </div>
+
+        </header>
+
+
+        <!-- FILTROS -->
+
+        <section class="filtros">
+
+            <div class="campo">
+
+                <label for="turma">
+                    Selecionar turma
+                </label>
+
+                <select id="turma">
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                    <option>
+                        1º Ano
+                    </option>
+
+                    <option>
+                        2º Ano
+                    </option>
+
+                    <option>
+                        3º Ano
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="campo">
+
+                <label for="disciplina">
+                    Selecionar disciplina
+                </label>
+
+                <select id="disciplina">
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                    <option>
+                        Matemática
+                    </option>
+
+                    <option>
+                        Português
+                    </option>
+
+                    <option>
+                        História
+                    </option>
+
+                    <option>
+                        Geografia
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- ÁREA DOS BOTÕES -->
+
+        <section class="acoes">
+
+            <button
+                type="button"
+                class="btn-sair"
+                onclick="window.location.href='index.html'"
+            >
+                Sair
+            </button>
+
+
+            <button
+                type="button"
+                class="btn-imprimir"
+                onclick="window.print()"
+            >
+                Imprimir
+            </button>
+
+        </section>
+
+
+        <!-- TABELA DE NOTAS -->
+
+        <section class="tabela-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Nome do aluno</th>
+
+                        <th>N1</th>
+                        <th>N2</th>
+                        <th>N3</th>
+                        <th>N4</th>
+
+                        <th>N5</th>
+                        <th>N6</th>
+                        <th>N7</th>
+                        <th>N8</th>
+
+                        <th>N9</th>
+                        <th>N10</th>
+
+                        <th>Resultado</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>João da Silva</td>
+
+                        <td>8,0</td>
+                        <td>7,5</td>
+                        <td>9,0</td>
+                        <td>8,5</td>
+
+                        <td>7,0</td>
+                        <td>8,0</td>
+                        <td>9,0</td>
+                        <td>8,5</td>
+
+                        <td>9,0</td>
+                        <td>8,0</td>
+
+                        <td class="aprovado">
+                            Aprovado
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Maria Oliveira</td>
+
+                        <td>6,0</td>
+                        <td>5,5</td>
+                        <td>7,0</td>
+                        <td>6,5</td>
+
+                        <td>7,0</td>
+                        <td>6,0</td>
+                        <td>5,5</td>
+                        <td>6,0</td>
+
+                        <td>6,5</td>
+                        <td>7,0</td>
+
+                        <td class="aprovado">
+                            Aprovado
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Pedro Santos</td>
+
+                        <td>4,0</td>
+                        <td>5,0</td>
+                        <td>4,5</td>
+                        <td>5,0</td>
+
+                        <td>4,0</td>
+                        <td>4,5</td>
+                        <td>5,0</td>
+                        <td>4,0</td>
+
+                        <td>5,0</td>
+                        <td>4,5</td>
+
+                        <td class="reprovado">
+                            Reprovado
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Ana Costa</td>
+
+                        <td>9,0</td>
+                        <td>8,5</td>
+                        <td>9,5</td>
+                        <td>9,0</td>
+
+                        <td>8,5</td>
+                        <td>9,0</td>
+                        <td>9,5</td>
+                        <td>8,5</td>
+
+                        <td>9,0</td>
+                        <td>9,5</td>
+
+                        <td class="aprovado">
+                            Aprovado
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

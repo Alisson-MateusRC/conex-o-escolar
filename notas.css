@@ -1,0 +1,356 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   PÁGINA
+================================= */
+
+.pagina-notas {
+    width: 100%;
+    min-height: 100vh;
+    padding: 25px 5%;
+}
+
+
+/* ==============================
+   CABEÇALHO
+================================= */
+
+.cabecalho-notas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #62bd78;
+}
+
+.logo-simbolo {
+    width: 40px;
+    height: 40px;
+
+    background-color: #b8f2c5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 22px;
+}
+
+.logo strong {
+    display: block;
+
+    font-size: 9px;
+}
+
+.logo span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 7px;
+}
+
+
+/* Nome da escola */
+
+.nome-escola {
+    width: 230px;
+
+    background-color: #70c984;
+
+    color: #222;
+
+    text-align: center;
+
+    padding: 12px;
+
+    font-size: 13px;
+}
+
+
+/* Logo da escola */
+
+.logo-escola {
+    width: 90px;
+
+    background-color: #70c984;
+
+    color: #222;
+
+    text-align: center;
+
+    padding: 10px 5px;
+
+    font-size: 12px;
+}
+
+
+/* ==============================
+   FILTROS
+================================= */
+
+.filtros {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    margin-bottom: 10px;
+}
+
+.campo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.campo label {
+    font-size: 8px;
+
+    color: #222;
+}
+
+.campo select {
+    width: 120px;
+
+    height: 20px;
+
+    border: none;
+
+    background-color: #dff8e5;
+
+    outline: none;
+
+    font-size: 8px;
+}
+
+
+/* ==============================
+   BOTÕES
+================================= */
+
+.acoes {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.btn-sair {
+    border: none;
+
+    background-color: #4421ff;
+
+    color: #ffffff;
+
+    padding: 8px 15px;
+
+    font-size: 9px;
+
+    cursor: pointer;
+}
+
+.btn-imprimir {
+    border: none;
+
+    background-color: #4421ff;
+
+    color: #ffffff;
+
+    padding: 5px 15px;
+
+    font-size: 8px;
+
+    cursor: pointer;
+}
+
+.btn-sair:hover,
+.btn-imprimir:hover {
+    opacity: 0.8;
+}
+
+
+/* ==============================
+   TABELA
+================================= */
+
+.tabela-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+
+/* Cabeçalho */
+
+thead th {
+    background-color: #a5ead2;
+
+    color: #333;
+
+    font-size: 7px;
+
+    font-weight: normal;
+
+    padding: 6px 3px;
+
+    border-right: 1px solid #ffffff;
+}
+
+
+/* Primeira coluna */
+
+thead th:first-child {
+    width: 130px;
+}
+
+
+/* Resultado */
+
+thead th:last-child {
+    width: 75px;
+}
+
+
+/* Células */
+
+tbody td {
+    background-color: #d5f5e8;
+
+    color: #333;
+
+    font-size: 7px;
+
+    text-align: center;
+
+    padding: 5px 2px;
+
+    border-right: 1px solid #ffffff;
+
+    border-bottom: 1px solid #ffffff;
+}
+
+
+/* Nome do aluno */
+
+tbody td:first-child {
+    text-align: left;
+
+    padding-left: 8px;
+}
+
+
+/* Linhas alternadas */
+
+tbody tr:nth-child(even) td {
+    background-color: #bff0df;
+}
+
+
+/* Resultado */
+
+.aprovado {
+    color: #16833b;
+
+    font-weight: bold;
+}
+
+.reprovado {
+    color: #c0392b;
+
+    font-weight: bold;
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+================================= */
+
+@media (max-width: 800px) {
+
+    .pagina-notas {
+        padding: 20px;
+    }
+
+    .nome-escola {
+        width: 160px;
+    }
+
+    .filtros {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 8px;
+    }
+
+    .cabecalho-notas {
+        gap: 10px;
+    }
+
+    .logo-escola {
+        width: 70px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .cabecalho-notas {
+        flex-wrap: wrap;
+    }
+
+    .nome-escola {
+        order: 3;
+
+        width: 100%;
+
+        margin-top: 10px;
+    }
+
+    .acoes {
+        margin-top: 15px;
+    }
+}
