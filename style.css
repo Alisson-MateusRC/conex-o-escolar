@@ -1,0 +1,349 @@
+/* Configurações gerais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+
+/* Container principal */
+.login-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   LADO ESQUERDO
+================================= */
+
+.decoracao {
+    width: 45%;
+    min-height: 100vh;
+    background-color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Faixas verdes */
+.faixa {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 28px;
+
+    background-color: #d5f5dc;
+}
+
+.faixa:nth-child(1) {
+    left: 15%;
+}
+
+.faixa:nth-child(2) {
+    left: 25%;
+}
+
+.faixa:nth-child(3) {
+    left: 35%;
+}
+
+.faixa:nth-child(4) {
+    left: 45%;
+}
+
+
+/* Logo */
+.logo-central {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: #62bd78;
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* Símbolo do logo */
+.logo-simbolo {
+    width: 80px;
+    height: 80px;
+
+    background-color: #b8f2c5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 45px;
+    color: #ffffff;
+
+    margin-bottom: 10px;
+}
+
+
+/* ==============================
+   LADO DIREITO
+================================= */
+
+.login-area {
+    width: 55%;
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 80px;
+}
+
+
+/* Título */
+.titulo {
+    text-align: center;
+}
+
+.titulo h1 {
+    color: #5bbd75;
+
+    font-size: 32px;
+    font-weight: normal;
+}
+
+.titulo p {
+    color: #5bbd75;
+
+    font-size: 15px;
+
+    margin-top: 8px;
+}
+
+
+/* Símbolo superior */
+.simbolo {
+    position: absolute;
+
+    top: 70px;
+    right: 12%;
+
+    width: 65px;
+    height: 65px;
+
+    background-color: #65d48b;
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+
+/* ==============================
+   CAIXA DE LOGIN
+================================= */
+
+.login-box {
+    width: 350px;
+
+    margin-top: 55px;
+
+    padding: 25px;
+
+    background-color: #e8faed;
+
+    border: 1px solid #b8cfc0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Título Entrar */
+.login-box h2 {
+    background-color: #a5efd0;
+
+    color: #222;
+
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: normal;
+
+    padding: 10px;
+
+    margin-bottom: 18px;
+}
+
+
+/* Labels */
+.login-box label {
+    font-size: 12px;
+
+    color: #333;
+
+    margin-bottom: 5px;
+}
+
+
+/* Campos */
+.login-box input {
+    width: 100%;
+
+    border: none;
+
+    background-color: #cceec7;
+
+    padding: 10px;
+
+    margin-bottom: 12px;
+
+    outline: none;
+}
+
+
+/* Campo senha */
+.login-box input[type="password"] {
+    background-color: #a8eac7;
+}
+
+
+/* Título dos perfis */
+.perfil-titulo {
+    font-size: 12px;
+
+    color: #333;
+
+    margin-top: 3px;
+    margin-bottom: 8px;
+}
+
+
+/* Área dos botões de perfil */
+.perfil-botoes {
+    display: flex;
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+
+/* Botões Professor e Escola */
+.perfil-botoes button {
+    flex: 1;
+
+    border: none;
+
+    background-color: #b8eac2;
+
+    color: #333;
+
+    padding: 9px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+
+/* Perfil selecionado */
+.perfil-botoes button.selecionado {
+    background-color: #67c77b;
+
+    color: #ffffff;
+}
+
+
+/* Botão Entrar */
+.btn-entrar {
+    border: none;
+
+    background-color: #67c77b;
+
+    color: #ffffff;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+/* Efeito ao passar o mouse */
+.perfil-botoes button:hover {
+    background-color: #8bd99b;
+}
+
+.btn-entrar:hover {
+    background-color: #4caf68;
+}
+
+
+/* Mensagem */
+.mensagem {
+    text-align: center;
+
+    font-size: 12px;
+
+    margin-top: 12px;
+
+    min-height: 15px;
+
+    color: #333;
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+================================= */
+
+@media (max-width: 768px) {
+
+    .login-container {
+        flex-direction: column;
+    }
+
+    .decoracao {
+        width: 100%;
+        min-height: 250px;
+    }
+
+    .login-area {
+        width: 100%;
+        min-height: auto;
+
+        padding: 40px 20px;
+    }
+
+    .simbolo {
+        display: none;
+    }
+
+    .login-box {
+        width: 100%;
+        max-width: 350px;
+    }
+}
