@@ -1,4 +1,7 @@
-/* Configurações gerais */
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+================================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,85 +10,55 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    min-height: 100vh;
-}
-
-
-/* Container principal */
-.login-container {
-    display: flex;
-    width: 100%;
+    background-color: #f5f8f6;
     min-height: 100vh;
 }
 
 
 /* ==============================
-   LADO ESQUERDO
+   PÁGINA PRINCIPAL
 ================================= */
 
-.decoracao {
-    width: 45%;
+.pagina-inicial {
+    display: flex;
     min-height: 100vh;
+}
+
+
+/* ==============================
+   MENU LATERAL
+================================= */
+
+.menu-lateral {
+    width: 230px;
+    min-height: 100vh;
+
     background-color: #ffffff;
 
+    border-right: 1px solid #dce8df;
+
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
 
-    position: relative;
-    overflow: hidden;
-}
-
-
-/* Faixas verdes */
-.faixa {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 28px;
-
-    background-color: #d5f5dc;
-}
-
-.faixa:nth-child(1) {
-    left: 15%;
-}
-
-.faixa:nth-child(2) {
-    left: 25%;
-}
-
-.faixa:nth-child(3) {
-    left: 35%;
-}
-
-.faixa:nth-child(4) {
-    left: 45%;
+    padding: 30px 20px;
 }
 
 
 /* Logo */
-.logo-central {
-    position: relative;
-    z-index: 2;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    color: #62bd78;
+.logo-menu {
     text-align: center;
 
-    font-size: 14px;
-    font-weight: bold;
+    color: #62bd78;
+
+    margin-bottom: 45px;
 }
 
-
-/* Símbolo do logo */
 .logo-simbolo {
-    width: 80px;
-    height: 80px;
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 10px;
 
     background-color: #b8f2c5;
 
@@ -93,226 +66,267 @@ body {
     align-items: center;
     justify-content: center;
 
-    font-size: 45px;
     color: #ffffff;
 
-    margin-bottom: 10px;
+    font-size: 35px;
 }
 
-
-/* ==============================
-   LADO DIREITO
-================================= */
-
-.login-area {
-    width: 55%;
-    min-height: 100vh;
-
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding-top: 80px;
-}
-
-
-/* Título */
-.titulo {
-    text-align: center;
-}
-
-.titulo h1 {
-    color: #5bbd75;
-
-    font-size: 32px;
-    font-weight: normal;
-}
-
-.titulo p {
-    color: #5bbd75;
-
+.logo-menu h2 {
     font-size: 15px;
 
-    margin-top: 8px;
-}
-
-
-/* Símbolo superior */
-.simbolo {
-    position: absolute;
-
-    top: 70px;
-    right: 12%;
-
-    width: 65px;
-    height: 65px;
-
-    background-color: #65d48b;
-
-    color: #ffffff;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 30px;
+    line-height: 1.3;
 }
 
 
 /* ==============================
-   CAIXA DE LOGIN
+   MENU
 ================================= */
 
-.login-box {
-    width: 350px;
-
-    margin-top: 55px;
-
-    padding: 25px;
-
-    background-color: #e8faed;
-
-    border: 1px solid #b8cfc0;
-
+.menu {
     display: flex;
     flex-direction: column;
+
+    gap: 10px;
 }
 
-
-/* Título Entrar */
-.login-box h2 {
-    background-color: #a5efd0;
-
-    color: #222;
-
-    text-align: center;
-
-    font-size: 18px;
-    font-weight: normal;
-
-    padding: 10px;
-
-    margin-bottom: 18px;
-}
-
-
-/* Labels */
-.login-box label {
-    font-size: 12px;
-
-    color: #333;
-
-    margin-bottom: 5px;
-}
-
-
-/* Campos */
-.login-box input {
+.menu-item {
     width: 100%;
 
     border: none;
 
-    background-color: #cceec7;
+    background-color: transparent;
 
-    padding: 10px;
+    padding: 13px 15px;
 
-    margin-bottom: 12px;
-
-    outline: none;
-}
-
-
-/* Campo senha */
-.login-box input[type="password"] {
-    background-color: #a8eac7;
-}
-
-
-/* Título dos perfis */
-.perfil-titulo {
-    font-size: 12px;
-
-    color: #333;
-
-    margin-top: 3px;
-    margin-bottom: 8px;
-}
-
-
-/* Área dos botões de perfil */
-.perfil-botoes {
     display: flex;
-    gap: 10px;
+    align-items: center;
 
-    margin-bottom: 12px;
+    gap: 12px;
+
+    text-align: left;
+
+    font-size: 14px;
+
+    color: #555;
+
+    cursor: pointer;
+
+    border-radius: 6px;
 }
 
 
-/* Botões Professor e Escola */
-.perfil-botoes button {
+/* Item selecionado */
+
+.menu-item.ativo {
+    background-color: #dff5e4;
+
+    color: #4caf68;
+
+    font-weight: bold;
+}
+
+
+/* Efeito */
+
+.menu-item:hover {
+    background-color: #edf8f0;
+}
+
+
+/* Botão sair */
+
+.sair {
+    margin-top: auto;
+
+    width: 100%;
+
+    border: none;
+
+    background-color: transparent;
+
+    padding: 13px 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #777;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    text-align: left;
+}
+
+.sair:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* ==============================
+   CONTEÚDO
+================================= */
+
+.conteudo {
     flex: 1;
 
-    border: none;
+    padding: 45px 55px;
+}
 
-    background-color: #b8eac2;
 
+/* ==============================
+   CABEÇALHO
+================================= */
+
+.cabecalho {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 40px;
+}
+
+.cabecalho h1 {
     color: #333;
 
-    padding: 9px;
+    font-size: 28px;
 
-    cursor: pointer;
-
-    font-size: 13px;
+    font-weight: normal;
 }
 
+.cabecalho p {
+    color: #777;
 
-/* Perfil selecionado */
-.perfil-botoes button.selecionado {
-    background-color: #67c77b;
-
-    color: #ffffff;
-}
-
-
-/* Botão Entrar */
-.btn-entrar {
-    border: none;
-
-    background-color: #67c77b;
-
-    color: #ffffff;
-
-    padding: 10px;
-
-    cursor: pointer;
+    margin-top: 7px;
 
     font-size: 14px;
 }
 
 
-/* Efeito ao passar o mouse */
-.perfil-botoes button:hover {
-    background-color: #8bd99b;
+/* Perfil */
+
+.perfil {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background-color: #b8f2c5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
 }
 
-.btn-entrar:hover {
-    background-color: #4caf68;
+
+/* ==============================
+   CARDS
+================================= */
+
+.resumo {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #ffffff;
+
+    border: 1px solid #dce8df;
+
+    border-radius: 8px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.card-icone {
+    width: 55px;
+    height: 55px;
+
+    background-color: #dff5e4;
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.card h3 {
+    color: #555;
+
+    font-size: 14px;
+
+    font-weight: normal;
+
+    margin-bottom: 5px;
+}
+
+.numero {
+    color: #4caf68;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    margin-bottom: 3px;
+}
+
+.card span {
+    color: #888;
+
+    font-size: 11px;
 }
 
 
-/* Mensagem */
-.mensagem {
-    text-align: center;
+/* ==============================
+   ÁREA DE BOAS-VINDAS
+================================= */
 
-    font-size: 12px;
+.boas-vindas {
+    background-color: #ffffff;
 
-    margin-top: 12px;
+    border: 1px solid #dce8df;
 
-    min-height: 15px;
+    border-radius: 8px;
 
-    color: #333;
+    padding: 35px;
+
+    max-width: 800px;
+}
+
+.boas-vindas h2 {
+    color: #4caf68;
+
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+.boas-vindas p {
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.7;
 }
 
 
@@ -320,30 +334,55 @@ body {
    RESPONSIVIDADE
 ================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
-    .login-container {
+    .menu-lateral {
+        width: 190px;
+    }
+
+    .conteudo {
+        padding: 30px;
+    }
+
+    .resumo {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .pagina-inicial {
         flex-direction: column;
     }
 
-    .decoracao {
-        width: 100%;
-        min-height: 250px;
-    }
-
-    .login-area {
+    .menu-lateral {
         width: 100%;
         min-height: auto;
 
-        padding: 40px 20px;
+        border-right: none;
+        border-bottom: 1px solid #dce8df;
     }
 
-    .simbolo {
-        display: none;
+    .logo-menu {
+        margin-bottom: 20px;
     }
 
-    .login-box {
-        width: 100%;
-        max-width: 350px;
+    .menu {
+        flex-direction: row;
+
+        overflow-x: auto;
+    }
+
+    .menu-item {
+        min-width: 120px;
+    }
+
+    .sair {
+        margin-top: 15px;
+    }
+
+    .conteudo {
+        padding: 25px 20px;
     }
 }
