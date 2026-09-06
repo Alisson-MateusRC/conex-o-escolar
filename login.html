@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Conexão Escolar - Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <section class="decoracao">
+
+            <div class="faixa"></div>
+            <div class="faixa"></div>
+            <div class="faixa"></div>
+            <div class="faixa"></div>
+
+            <div class="logo-central">
+
+                <div class="logo-simbolo">
+                    ✦
+                </div>
+
+                <span>
+                    CONEXÃO<br>
+                    ESCOLAR
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <section class="login-area">
+
+            <div class="titulo">
+
+                <h1>CONEXÃO ESCOLAR</h1>
+
+                <p>Conectando Famílias</p>
+
+            </div>
+
+
+            <div class="simbolo">
+                ◆
+            </div>
+
+
+            <div class="login-box">
+
+                <h2>Entrar</h2>
+
+
+                <label for="cpf">
+                    CPF
+                </label>
+
+                <input
+                    type="text"
+                    id="cpf"
+                    placeholder="Digite seu CPF"
+                >
+
+
+                <label for="senha">
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Digite sua senha"
+                >
+
+
+                <p class="perfil-titulo">
+                    Selecione seu perfil:
+                </p>
+
+
+                <div class="perfil-botoes">
+
+                    <button
+                        type="button"
+                        id="btnProfessor"
+                        onclick="selecionarPerfil('Professor')"
+                    >
+                        Professor
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnEscola"
+                        onclick="selecionarPerfil('Escola')"
+                    >
+                        Escola
+                    </button>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="btn-entrar"
+                    onclick="entrar()"
+                >
+                    Entrar
+                </button>
+
+
+                <p
+                    id="mensagem"
+                    class="mensagem"
+                ></p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

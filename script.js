@@ -48,7 +48,9 @@ function entrar() {
     }
 
 
-    mensagem.textContent =
-        "Login realizado como " + perfilSelecionado + "!";
+    // Depois de preencher os dados corretamente,
+    // o usuário será direcionado para a tela inicial.
+
+    window.location.href = "index.html";
 
 }
