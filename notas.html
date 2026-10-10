@@ -1,12 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Conexão Escolar - Notas</title>
-
     <link rel="stylesheet" href="notas.css">
 </head>
 
@@ -14,269 +13,210 @@
 
     <main class="pagina-notas">
 
-        <!-- MENU / CABEÇALHO -->
-
         <header class="cabecalho-notas">
-
             <div class="logo">
-
-                <div class="logo-simbolo">
-                    ✦
-                </div>
-
+                <div class="logo-simbolo">✦</div>
                 <div>
                     <strong>CONEXÃO ESCOLAR</strong>
-
-                    <span>
-                        Conectando Famílias
-                    </span>
+                    <span>Conectando Famílias</span>
                 </div>
-
             </div>
 
-
-            <div class="nome-escola">
-                Nome da Escola
-            </div>
-
+            <div class="nome-escola">Nome da Escola</div>
 
             <div class="logo-escola">
-                Logo da<br>
-                escola
+                Logo da<br>escola
             </div>
-
         </header>
-
-
-        <!-- FILTROS -->
 
         <section class="filtros">
 
             <div class="campo">
-
-                <label for="turma">
-                    Selecionar turma
-                </label>
-
+                <label for="turma">Selecionar turma</label>
                 <select id="turma">
-
-                    <option value="">
-                        Selecione
-                    </option>
-
-                    <option>
-                        1º Ano
-                    </option>
-
-                    <option>
-                        2º Ano
-                    </option>
-
-                    <option>
-                        3º Ano
-                    </option>
-
+                    <option value="">Todas as turmas</option>
+                    <option value="1º Ano">1º Ano</option>
+                    <option value="2º Ano">2º Ano</option>
+                    <option value="3º Ano">3º Ano</option>
                 </select>
-
             </div>
 
-
             <div class="campo">
-
-                <label for="disciplina">
-                    Selecionar disciplina
-                </label>
-
+                <label for="disciplina">Selecionar disciplina</label>
                 <select id="disciplina">
-
-                    <option value="">
-                        Selecione
-                    </option>
-
-                    <option>
-                        Matemática
-                    </option>
-
-                    <option>
-                        Português
-                    </option>
-
-                    <option>
-                        História
-                    </option>
-
-                    <option>
-                        Geografia
-                    </option>
-
+                    <option value="">Todas as disciplinas</option>
+                    <option value="Matemática">Matemática</option>
+                    <option value="Português">Português</option>
+                    <option value="História">História</option>
+                    <option value="Geografia">Geografia</option>
                 </select>
-
             </div>
 
         </section>
 
-
-        <!-- ÁREA DOS BOTÕES -->
-
         <section class="acoes">
-
             <button
                 type="button"
                 class="btn-sair"
-                onclick="window.location.href='index.html'"
-            >
+                onclick="window.location.href='index.html'">
                 Sair
             </button>
-
 
             <button
                 type="button"
                 class="btn-imprimir"
-                onclick="window.print()"
-            >
+                onclick="window.print()">
                 Imprimir
             </button>
-
         </section>
 
-
-        <!-- TABELA DE NOTAS -->
+        <p id="mensagem-notas" role="status" aria-live="polite"></p>
 
         <section class="tabela-container">
-
             <table>
-
                 <thead>
-
                     <tr>
-
                         <th>Nome do aluno</th>
-
                         <th>N1</th>
                         <th>N2</th>
                         <th>N3</th>
                         <th>N4</th>
-
                         <th>N5</th>
                         <th>N6</th>
                         <th>N7</th>
                         <th>N8</th>
-
                         <th>N9</th>
                         <th>N10</th>
-
+                        <th>Média</th>
                         <th>Resultado</th>
-
                     </tr>
-
                 </thead>
 
-
-                <tbody>
-
+                <tbody id="corpo-tabela-notas">
                     <tr>
-
-                        <td>João da Silva</td>
-
-                        <td>8,0</td>
-                        <td>7,5</td>
-                        <td>9,0</td>
-                        <td>8,5</td>
-
-                        <td>7,0</td>
-                        <td>8,0</td>
-                        <td>9,0</td>
-                        <td>8,5</td>
-
-                        <td>9,0</td>
-                        <td>8,0</td>
-
-                        <td class="aprovado">
-                            Aprovado
-                        </td>
-
+                        <td colspan="13">Carregando notas...</td>
                     </tr>
-
-
-                    <tr>
-
-                        <td>Maria Oliveira</td>
-
-                        <td>6,0</td>
-                        <td>5,5</td>
-                        <td>7,0</td>
-                        <td>6,5</td>
-
-                        <td>7,0</td>
-                        <td>6,0</td>
-                        <td>5,5</td>
-                        <td>6,0</td>
-
-                        <td>6,5</td>
-                        <td>7,0</td>
-
-                        <td class="aprovado">
-                            Aprovado
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td>Pedro Santos</td>
-
-                        <td>4,0</td>
-                        <td>5,0</td>
-                        <td>4,5</td>
-                        <td>5,0</td>
-
-                        <td>4,0</td>
-                        <td>4,5</td>
-                        <td>5,0</td>
-                        <td>4,0</td>
-
-                        <td>5,0</td>
-                        <td>4,5</td>
-
-                        <td class="reprovado">
-                            Reprovado
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td>Ana Costa</td>
-
-                        <td>9,0</td>
-                        <td>8,5</td>
-                        <td>9,5</td>
-                        <td>9,0</td>
-
-                        <td>8,5</td>
-                        <td>9,0</td>
-                        <td>9,5</td>
-                        <td>8,5</td>
-
-                        <td>9,0</td>
-                        <td>9,5</td>
-
-                        <td class="aprovado">
-                            Aprovado
-                        </td>
-
-                    </tr>
-
                 </tbody>
-
             </table>
-
         </section>
 
     </main>
 
-</body>
+    <script>
+        const API_NOTAS = 'http://localhost:3000/api/notas';
 
+        const corpoTabela = document.getElementById('corpo-tabela-notas');
+        const mensagem = document.getElementById('mensagem-notas');
+        const filtroTurma = document.getElementById('turma');
+        const filtroDisciplina = document.getElementById('disciplina');
+
+        let todasAsNotas = [];
+
+        async function carregarNotas() {
+            mensagem.textContent = '';
+
+            try {
+                const resposta = await fetch(API_NOTAS);
+
+                if (!resposta.ok) {
+                    throw new Error('Não foi possível buscar as notas.');
+                }
+
+                todasAsNotas = await resposta.json();
+                mostrarNotas();
+
+            } catch (erro) {
+                console.error('Erro ao carregar notas:', erro);
+
+                corpoTabela.innerHTML = `
+                    <tr>
+                        <td colspan="13">
+                            Não foi possível carregar as notas.
+                            Verifique se o servidor da API está ligado.
+                        </td>
+                    </tr>
+                `;
+            }
+        }
+
+        function mostrarNotas() {
+            const disciplinaSelecionada = filtroDisciplina.value;
+            const turmaSelecionada = filtroTurma.value;
+
+            const notasFiltradas = todasAsNotas.filter(nota => {
+                const correspondeDisciplina =
+                    !disciplinaSelecionada ||
+                    nota.disciplina === disciplinaSelecionada;
+
+                // O endpoint atual de notas não retorna a turma do aluno.
+                // Por isso, o filtro de turma será aplicado depois da
+                // integração com os dados de turma.
+                const correspondeTurma = !turmaSelecionada;
+
+                return correspondeDisciplina && correspondeTurma;
+            });
+
+            if (notasFiltradas.length === 0) {
+                corpoTabela.innerHTML = `
+                    <tr>
+                        <td colspan="13">
+                            Nenhuma nota encontrada para essa disciplina.
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            corpoTabela.innerHTML = '';
+
+            notasFiltradas.forEach(nota => {
+                const linha = document.createElement('tr');
+
+                const valores = [
+                    nota.nome_aluno || 'Aluno não identificado',
+                    nota.n1,
+                    nota.n2,
+                    nota.n3,
+                    nota.n4,
+                    nota.n5,
+                    nota.n6,
+                    nota.n7,
+                    nota.n8,
+                    nota.n9,
+                    nota.n10,
+                    nota.media,
+                    nota.resultado
+                ];
+
+                valores.forEach((valor, indice) => {
+                    const celula = document.createElement('td');
+
+                    celula.textContent =
+                        valor === null || valor === undefined
+                            ? '-'
+                            : valor;
+
+                    if (indice === 12) {
+                        celula.classList.add(
+                            nota.resultado === 'Aprovado'
+                                ? 'aprovado'
+                                : 'reprovado'
+                        );
+                    }
+
+                    linha.appendChild(celula);
+                });
+
+                corpoTabela.appendChild(linha);
+            });
+        }
+
+        filtroDisciplina.addEventListener('change', mostrarNotas);
+        filtroTurma.addEventListener('change', mostrarNotas);
+
+        carregarNotas();
+    </script>
+
+</body>
 </html>
+```

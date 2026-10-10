@@ -14,7 +14,7 @@ const pool = require('../config/db');
  * @swagger
  * /api/notas:
  *   get:
- *     summary: Listar notas com média e resultado final
+ *     summary: Listar notas com nome do aluno, média e resultado final
  *     tags: [Notas]
  *     responses:
  *       200:
@@ -25,20 +25,23 @@ const pool = require('../config/db');
 router.get('/', async (req, res) => {
     try {
         const resultado = await pool.query(`
-            SELECT *,
+            SELECT
+                notas.*,
+                alunos.nome AS nome_aluno,
                 ROUND((
-                    n1 + n2 + n3 + n4 + n5 +
-                    n6 + n7 + n8 + n9 + n10
+                    notas.n1 + notas.n2 + notas.n3 + notas.n4 + notas.n5 +
+                    notas.n6 + notas.n7 + notas.n8 + notas.n9 + notas.n10
                 ) / 10, 2) AS media,
                 CASE
                     WHEN (
-                        n1 + n2 + n3 + n4 + n5 +
-                        n6 + n7 + n8 + n9 + n10
+                        notas.n1 + notas.n2 + notas.n3 + notas.n4 + notas.n5 +
+                        notas.n6 + notas.n7 + notas.n8 + notas.n9 + notas.n10
                     ) / 10 >= 6 THEN 'Aprovado'
                     ELSE 'Reprovado'
                 END AS resultado
             FROM notas
-            ORDER BY aluno_id, disciplina
+            INNER JOIN alunos ON alunos.id = notas.aluno_id
+            ORDER BY alunos.nome, notas.disciplina
         `);
 
         res.json(resultado.rows);
@@ -134,7 +137,7 @@ router.post('/', async (req, res) => {
             ano_letivo,
             n1, n2, n3, n4, n5,
             n6, n7, n8, n9, n10
-        } = req.body;
+        } = req.body || {};
 
         const notas = [n1, n2, n3, n4, n5, n6, n7, n8, n9, n10];
 
@@ -245,20 +248,23 @@ router.get('/:id', async (req, res) => {
         }
 
         const resultado = await pool.query(`
-            SELECT *,
+            SELECT
+                notas.*,
+                alunos.nome AS nome_aluno,
                 ROUND((
-                    n1 + n2 + n3 + n4 + n5 +
-                    n6 + n7 + n8 + n9 + n10
+                    notas.n1 + notas.n2 + notas.n3 + notas.n4 + notas.n5 +
+                    notas.n6 + notas.n7 + notas.n8 + notas.n9 + notas.n10
                 ) / 10, 2) AS media,
                 CASE
                     WHEN (
-                        n1 + n2 + n3 + n4 + n5 +
-                        n6 + n7 + n8 + n9 + n10
+                        notas.n1 + notas.n2 + notas.n3 + notas.n4 + notas.n5 +
+                        notas.n6 + notas.n7 + notas.n8 + notas.n9 + notas.n10
                     ) / 10 >= 6 THEN 'Aprovado'
                     ELSE 'Reprovado'
                 END AS resultado
             FROM notas
-            WHERE id = $1
+            INNER JOIN alunos ON alunos.id = notas.aluno_id
+            WHERE notas.id = $1
         `, [id]);
 
         if (resultado.rows.length === 0) {
