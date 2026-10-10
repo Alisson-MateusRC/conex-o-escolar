@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexão Escolar - Alunos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="pagina-inicial">
+
+        <aside class="menu-lateral">
+
+            <div class="logo-menu">
+                <div class="logo-simbolo">✦</div>
+                <h2>CONEXÃO<br>ESCOLAR</h2>
+            </div>
+
+            <nav class="menu">
+
+                <button class="menu-item"
+                    onclick="window.location.href='index.html'">
+                    🏠 <span>Início</span>
+                </button>
+
+                <button class="menu-item ativo"
+                    onclick="window.location.href='alunos.html'">
+                    👨‍🎓 <span>Alunos</span>
+                </button>
+
+                <button class="menu-item"
+                    onclick="window.location.href='notas.html'">
+                    📊 <span>Desempenho</span>
+                </button>
+
+                <button class="menu-item"
+                    onclick="window.location.href='notificacao.html'">
+                    🔔 <span>Notificações</span>
+                </button>
+
+            </nav>
+
+            <button class="sair"
+                onclick="window.location.href='login.html'">
+                🚪 <span>Sair</span>
+            </button>
+
+        </aside>
+
+        <section class="conteudo">
+
+            <header class="cabecalho">
+                <div>
+                    <h1>Alunos</h1>
+                    <p>Consulte os alunos cadastrados</p>
+                </div>
+
+                <div class="perfil">👤</div>
+            </header>
+
+            <section class="boas-vindas">
+                <h2>Lista de alunos</h2>
+                <p>Confira abaixo os dados dos alunos.</p>
+            </section>
+
+            <section class="tabela-alunos">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Turma</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="lista-alunos">
+                        <tr>
+                            <td colspan="4">Carregando alunos...</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script>
+        async function carregarAlunos() {
+            const lista = document.getElementById("lista-alunos");
+
+            try {
+                const resposta = await fetch("http://localhost:3000/api/alunos");
+
+                if (!resposta.ok) {
+                    throw new Error("Não foi possível carregar os alunos.");
+                }
+
+                const alunos = await resposta.json();
+
+                lista.innerHTML = "";
+
+                if (alunos.length === 0) {
+                    lista.innerHTML = `
+                        <tr>
+                            <td colspan="4">Nenhum aluno cadastrado.</td>
+                        </tr>
+                    `;
+                    return;
+                }
+
+                alunos.forEach(aluno => {
+                    const linha = document.createElement("tr");
+
+                    [aluno.id, aluno.nome, aluno.email, aluno.turma]
+                        .forEach(valor => {
+                            const celula = document.createElement("td");
+                            celula.textContent = valor ?? "";
+                            linha.appendChild(celula);
+                        });
+
+                    lista.appendChild(linha);
+                });
+
+            } catch (erro) {
+                lista.innerHTML = `
+                    <tr>
+                        <td colspan="4">
+                            Não foi possível carregar os alunos.
+                            Verifique se o servidor está funcionando.
+                        </td>
+                    </tr>
+                `;
+
+                console.error(erro);
+            }
+        }
+
+        carregarAlunos();
+    </script>
+
+</body>
+</html>

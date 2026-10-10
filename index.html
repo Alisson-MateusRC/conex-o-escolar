@@ -1,12 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Conexão Escolar - Tela Inicial</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,197 +13,105 @@
 
     <main class="pagina-inicial">
 
-        <!-- MENU LATERAL -->
         <aside class="menu-lateral">
 
             <div class="logo-menu">
-
-                <div class="logo-simbolo">
-                    ✦
-                </div>
-
-                <h2>
-                    CONEXÃO<br>
-                    ESCOLAR
-                </h2>
-
+                <div class="logo-simbolo">✦</div>
+                <h2>CONEXÃO<br>ESCOLAR</h2>
             </div>
-
 
             <nav class="menu">
 
-                <button class="menu-item ativo">
+                <button class="menu-item ativo"
+                    onclick="window.location.href='index.html'">
                     🏠
                     <span>Início</span>
                 </button>
 
-
-                <button class="menu-item">
+                <button class="menu-item"
+                    onclick="window.location.href='alunos.html'">
                     👨‍🎓
                     <span>Alunos</span>
                 </button>
 
-
-                <button
-                    class="menu-item"
-                    onclick="window.location.href='notas.html'"
-                >
+                <button class="menu-item"
+                    onclick="window.location.href='notas.html'">
                     📊
                     <span>Desempenho</span>
                 </button>
 
-
-                <!-- BOTÃO NOTIFICAÇÕES -->
-                <button
-                    class="menu-item"
-                    onclick="window.location.href='notificacao.html'"
-                >
+                <button class="menu-item"
+                    onclick="window.location.href='notificacao.html'">
                     🔔
                     <span>Notificações</span>
                 </button>
 
             </nav>
 
-
-            <!-- SAIR -->
-            <button
-                class="sair"
-                onclick="window.location.href='login.html'"
-            >
+            <button class="sair"
+                onclick="window.location.href='login.html'">
                 🚪
                 <span>Sair</span>
             </button>
 
         </aside>
 
-
-        <!-- CONTEÚDO PRINCIPAL -->
         <section class="conteudo">
 
             <header class="cabecalho">
-
                 <div>
-
-                    <h1>
-                        Olá, Professor!
-                    </h1>
-
-                    <p>
-                        Bem-vindo ao Conexão Escolar
-                    </p>
-
+                    <h1>Olá, Professor!</h1>
+                    <p>Bem-vindo ao Conexão Escolar</p>
                 </div>
 
-
-                <div class="perfil">
-                    👤
-                </div>
-
+                <div class="perfil">👤</div>
             </header>
 
-
-            <!-- ÁREA DE CARDS -->
             <section class="resumo">
 
                 <div class="card">
-
-                    <div class="card-icone">
-                        👨‍🎓
-                    </div>
-
+                    <div class="card-icone">👨‍🎓</div>
                     <div>
-
-                        <h3>
-                            Alunos
-                        </h3>
-
-                        <p class="numero">
-                            25
-                        </p>
-
-                        <span>
-                            Alunos cadastrados
-                        </span>
-
+                        <h3>Alunos</h3>
+                        <p class="numero">25</p>
+                        <span>Alunos cadastrados</span>
                     </div>
-
                 </div>
 
-
                 <div class="card">
-
-                    <div class="card-icone">
-                        📊
-                    </div>
-
+                    <div class="card-icone">📊</div>
                     <div>
-
-                        <h3>
-                            Desempenho
-                        </h3>
-
-                        <p class="numero">
-                            85%
-                        </p>
-
-                        <span>
-                            Média da turma
-                        </span>
-
+                        <h3>Desempenho</h3>
+                        <p class="numero">85%</p>
+                        <span>Média da turma</span>
                     </div>
-
                 </div>
 
-
                 <div class="card">
-
-                    <div class="card-icone">
-                        🔔
-                    </div>
-
+                    <div class="card-icone">🔔</div>
                     <div>
-
-                        <h3>
-                            Notificações
-                        </h3>
-
-                        <p class="numero">
-                            3
-                        </p>
-
-                        <span>
-                            Novas notificações
-                        </span>
-
+                        <h3>Notificações</h3>
+                        <p class="numero">3</p>
+                        <span>Novas notificações</span>
                     </div>
-
                 </div>
 
             </section>
 
-
-            <!-- BEM-VINDO -->
             <section class="boas-vindas">
-
-                <h2>
-                    Conexão Escolar
-                </h2>
-
+                <h2>Conexão Escolar</h2>
                 <p>
                     Acompanhe o desempenho dos alunos,
                     consulte informações e mantenha a
                     comunicação entre escola e família.
                 </p>
-
             </section>
 
         </section>
 
     </main>
 
-
     <script src="script.js"></script>
 
 </body>
-
 </html>
