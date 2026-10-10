@@ -6,9 +6,10 @@ const swaggerSpec = require('./swagger/swagger');
 const app = express();
 const PORT = 3000;
 
+// Permite receber dados em formato JSON
 app.use(express.json());
 
-// Rota principal
+// Rota inicial da API
 app.get('/', (req, res) => {
     res.json({
         mensagem: 'API do Conexão Escolar funcionando!'
@@ -18,11 +19,15 @@ app.get('/', (req, res) => {
 // Documentação Swagger
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// Rotas dos alunos
+// Rotas de alunos
 const alunosRoutes = require('./routes/alunos');
 app.use('/api/alunos', alunosRoutes);
 
-// Iniciar servidor
+// Rotas de notas
+const notasRoutes = require('./routes/notas');
+app.use('/api/notas', notasRoutes);
+
+// Inicialização do servidor
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
     console.log(`Documentação Swagger: http://localhost:${PORT}/api-docs`);

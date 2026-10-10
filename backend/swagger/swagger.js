@@ -1,4 +1,5 @@
 
+const path = require('path');
 const swaggerJsdoc = require('swagger-jsdoc');
 
 const opcoes = {
@@ -16,9 +17,20 @@ const opcoes = {
             }
         ]
     },
-    apis: ['./routes/*.js']
+    apis: [
+        path.resolve(__dirname, '../routes/alunos.js'),
+        path.resolve(__dirname, '../routes/notas.js')
+    ]
 };
 
-const swaggerSpec = swaggerJsdoc(opcoes);
+const swaggerSpec = swaggerJsdoc(opcoes, {
+    failOnErrors: true
+});
+
+console.log('Arquivos do Swagger:', opcoes.apis);
+console.log(
+    'Rotas encontradas:',
+    Object.keys(swaggerSpec.paths || {})
+);
 
 module.exports = swaggerSpec;
